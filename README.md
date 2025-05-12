@@ -50,3 +50,32 @@ Test your new function; I've provided some basic testing code in `code.test.js`.
 What is the worst-case asymptotic time complexity of your implementation? What
 is the worst-case asymptotic memory complexity? Add your answer, including your
 reasoning, to this markdown file.
+
+---
+
+### Choosing $i$ and $k$
+
+I chose a method of changing $i$ and $k$, such that all possible swaps are looked at. I did this using nested for-loops and incrementing $i$ and $j$ by 1.
+
+### Stopping Criterion
+
+My stopping criterion was that no improvement was found after checking every possible swappage of edge pairs, given the current best route. I declared and managed an `improved` flag to keep track of this. The stoppage happens when both of the nested for-loops run completely without setting `improved` to `true`, which means no improvement was found.
+
+### Runtime
+
+The suboperations of note in this implementation are the while loop and nested for-loops in the main function body, the recursive subarray reversal function I added, and the initialization of the `Graph` object, but each of those run in linear time. There is a possibility that the nested for-loops both run a max number of times (turns into quadratic runtime), so the graph initialization and subarray reversal operations are not significant.
+
+I think that the worst-case scenario is going to involve making the nested for- and while-loops run a maximum number of times, which I think is going to happen when the algorithm finds a better route at the $(n-1)$th iteration of the inner for-loop for every iteration of the outer for-loop. This will result in a complexity of $O(|V|^2)$ for iterating over possible edge pairs. The outer while-loop can run many times, which I think can reach up to $|V|$ times, making this algorithm run in $O(|V|^3)$ time. 
+
+### Space
+
+I think the only notable space requirement is room for the `distance_matrix` attribute of the `Graph` object, which is $|V| \times |V|$. This makes memory usage a factor of $O(|V|^2)$. Everything else involves manipulation of 1-dimensional arrays, so those operations are not significant.
+
+---
+
+I was unclear just from the pseudocode how the edge swapping mechanism was supposed to work or what it would look like visually. To help visualize that, I found a youtube video. I did my best to avoid looking at their code.
+
+**I certify that I have listed all sources used to complete this exercise, including the use
+of any Large Language Models. All of the work is my own, except where stated
+otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is
+suspected, charges may be filed against me without prior notice.**
