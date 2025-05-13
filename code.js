@@ -1,4 +1,5 @@
 class Graph {
+  // Graph class
   dist_matrix = [];
   best_route = [];
   best_cost = 0;
