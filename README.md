@@ -59,7 +59,7 @@ I chose a method of changing $i$ and $k$, such that all possible swaps are looke
 
 ### Stopping Criterion
 
-My stopping criterion was that no improvement was found after checking every possible swappage of edge pairs, given the current best route. I declared and managed an `improved` flag to keep track of this. The stoppage happens when both of the nested for-loops run completely without setting `improved` to `true`, which means no improvement was found.
+My stopping criterion was that no improvement was found after checking every possible swappage of edge pairs given the current best route. I declared and managed an `improved` flag to keep track of this. The stoppage happens when both of the nested for-loops run completely without setting `improved` to `true`, which means no improvement was found.
 
 ### Runtime
 
